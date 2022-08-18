@@ -19,7 +19,7 @@ const PatientList = () => {
             <Grid item xs={3}>
                 <Box mt={2}>
                     <ModalSearch></ModalSearch>
-                    <Button variant="contained">ค้นหา</Button>
+                    {/* <Button variant="contained">ค้นหา</Button> */}
                 </Box>
             </Grid>
             <Grid item xs={12}>

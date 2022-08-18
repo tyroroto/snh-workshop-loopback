@@ -6,13 +6,17 @@ export const getPatientList = async () => {
     return res.data;
 }
 
-const getPatient = async (id) => {
+export const getPatient = async (id) => {
     const res = await axios.get(apiUrl + '/patients/' + id);
     return res.data;
 }
 
-const searchPatient = (hn) => {
-
+export const searchPatient = async (hn) => {
+    const res = await axios.post(
+        apiUrl + '/patients/search',
+        { hn }
+    );
+    return res.data;
 }
 
 const bookingPatient = (id, booking) => {
