@@ -42,7 +42,7 @@ const Patient = () => {
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {patient.bookings.map((data, index) => {
+                            {patient.bookings?.map((data, index) => {
                                 return <TableRow key={index}>
                                     <TableCell>{data.id}</TableCell>
                                     <TableCell>{data.code}</TableCell>
