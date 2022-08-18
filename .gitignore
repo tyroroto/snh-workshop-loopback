@@ -16,3 +16,4 @@ node_modules
 dist
 *xunit.xml
 .nyc_output/
+react/.env
