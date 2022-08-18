@@ -1,8 +1,15 @@
 import { Box, Typography, Grid, Container, Button } from "@mui/material";
+import { getPatientList } from "api";
 import PatientTable from "PatientTable";
+import { useEffect, useState } from "react";
 
 const PatientList = () => {
-
+    const [patientData, setPatientData] = useState([]);
+    useEffect( () => {
+        getPatientList().then( (data) => {
+            setPatientData(data);
+        })
+    }, [])
     return <Container>
         <Grid container>
             <Grid item xs={9}>
@@ -14,7 +21,7 @@ const PatientList = () => {
                 </Box>
             </Grid>
             <Grid item xs={12}>
-                <PatientTable></PatientTable>
+                <PatientTable currentData={patientData}></PatientTable>
             </Grid>
         </Grid>
     </Container>
