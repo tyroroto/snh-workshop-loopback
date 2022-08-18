@@ -21,7 +21,7 @@ export default function ModalSearch() {
         if( hn != 0 ) {
             searchPatient(hn).then( result => {
                 console.log(result)
-                navigate('/patient/'+ result.id);
+                navigate('/patient/'+ result.hn);
             }).catch( e => {
                 console.error(e);
                 alert('ไม่พบผู้ป่วย')
