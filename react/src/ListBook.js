@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const apiUrl = 'http://localhost:3000';
 
-const ListBook = () => {
+const ListBook = ({ onSelect, readOnly }) => {
 
     const [currentData, setCurrentData] = useState([])
     const loadData = () => {
@@ -15,12 +15,16 @@ const ListBook = () => {
         })
     }
     useEffect(() => {
-       loadData();
+        loadData();
     }, [])
 
     return <Container>
         <h1> List Booking
+           {
+            readOnly != true ?
             <Link to='/edit-book'> Create </Link>
+            : ' (READ ONLY)'
+           }
         </h1>
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -35,21 +39,32 @@ const ListBook = () => {
                 </TableHead>
                 <TableBody>
                     {currentData.map((data, index) => {
-                        return <TableRow key={index}>
+                        return <TableRow
+                            onClick={() => {
+                            if (onSelect != null) {
+                                onSelect(data);
+                            }
+                        }} key={index}>
                             <TableCell>{data.id}</TableCell>
                             <TableCell>{data.code}</TableCell>
                             <TableCell>{data.name}</TableCell>
                             <TableCell>{data.price}</TableCell>
                             <TableCell>
-                                <Link to={'/edit-book/' + data.id}>EDIT</Link>
-                                <Button color='error' onClick={()=>{
-                                    axios.delete(apiUrl+'/bookings/'+data.id)
-                                    .then( () => {
-                                        alert('DELETE SUCCESS');
-                                        loadData();
-                                    })
-                                    .catch(e=>console.error(e))
-                                }}> Del </Button>
+                                {
+                                    readOnly != true ?
+                                        <>
+                                            <Link to={'/edit-book/' + data.id}>EDIT</Link>
+                                            <Button color='error' onClick={() => {
+                                                axios.delete(apiUrl + '/bookings/' + data.id)
+                                                    .then(() => {
+                                                        alert('DELETE SUCCESS');
+                                                        loadData();
+                                                    })
+                                                    .catch(e => console.error(e))
+                                            }}> Del </Button>
+                                        </>: null
+                                }
+
                             </TableCell>
                         </TableRow>
                     })}

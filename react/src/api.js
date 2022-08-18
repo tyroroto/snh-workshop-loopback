@@ -19,6 +19,10 @@ export const searchPatient = async (hn) => {
     return res.data;
 }
 
-const bookingPatient = (id, booking) => {
-
+export const bookingPatient = async (hn, code) => {
+    const res = await axios.post(
+        apiUrl + '/patients/book',
+        { hn, code }
+    );
+    return res.data;
 }

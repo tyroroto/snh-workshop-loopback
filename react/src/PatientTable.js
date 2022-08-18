@@ -21,7 +21,7 @@ const PatientTable = ({currentData}) => {
                     <TableCell>{data.firstname}</TableCell>
                     <TableCell>{data.lastname}</TableCell>
                     <TableCell>
-                        <Link to={'/patient/' + data.id}>Open</Link>
+                        <Link to={'/patient/' + data.hn}>Open</Link>
                     </TableCell>
                 </TableRow>
             })}
