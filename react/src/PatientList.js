@@ -1,5 +1,6 @@
 import { Box, Typography, Grid, Container, Button } from "@mui/material";
 import { getPatientList } from "api";
+import ModalSearch from "ModalSearch";
 import PatientTable from "PatientTable";
 import { useEffect, useState } from "react";
 
@@ -17,6 +18,7 @@ const PatientList = () => {
             </Grid>
             <Grid item xs={3}>
                 <Box mt={2}>
+                    <ModalSearch></ModalSearch>
                     <Button variant="contained">ค้นหา</Button>
                 </Box>
             </Grid>
