@@ -1,3 +1,6 @@
+import { Container, Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Box } from "@mui/material";
+import { Link } from "react-router-dom";
+
 const PatientTable = ({currentData}) => {
     return  <TableContainer component={Paper}>
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
