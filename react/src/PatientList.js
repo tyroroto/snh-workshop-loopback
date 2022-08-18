@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 
 const PatientList = () => {
     const [patientData, setPatientData] = useState([]);
-    useEffect( () => {
-        getPatientList().then( (data) => {
+    useEffect(() => {
+        getPatientList().then((data) => {
             setPatientData(data);
         })
     }, [])
@@ -17,7 +17,7 @@ const PatientList = () => {
             </Grid>
             <Grid item xs={3}>
                 <Box mt={2}>
-                <Button variant="contained">ค้นหา</Button>
+                    <Button variant="contained">ค้นหา</Button>
                 </Box>
             </Grid>
             <Grid item xs={12}>
