@@ -10,10 +10,10 @@ export class Patient extends Entity {
   id?: string;
 
   @property({
-    type: 'string',
+    type: 'number',
     required: true,
   })
-  hn: string;
+  hn: number;
 
   @property({
     type: 'string',
