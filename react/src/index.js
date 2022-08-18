@@ -18,38 +18,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <Link to='/'>
-              <MenuIcon />
-            </Link>
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Patient App
-          </Typography>
-          {/* <Button color="inherit">Login</Button> */}
-        </Toolbar>
-      </AppBar>
-      <Routes>
-        <Route path='/' element={<Main />}></Route>
-        <Route path='/cal-bmi' element={<App />}></Route>
-        <Route path='/list-book' element={<ListBook />}></Route>
-        <Route path='/edit-book' element={<EditBook></EditBook>}></Route>
-        <Route path='/edit-book/:id' element={<EditBook></EditBook>}></Route>
-        <Route path='/patient-list' element={<PatientList />}></Route>
-        <Route path='/patient/:id' element={<Patient />}></Route>
-
-        <Route path='*' element={<NotFound />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <App></App>
   </React.StrictMode>
 );
 
