@@ -34,7 +34,7 @@ axios.interceptors.response.use(
 
             if (result.data.accessToken) {
                 tokenObject.token = result.data.accessToken;
-                localStorage.removeItem('refreshToken')
+                // localStorage.removeItem('refreshToken')
                 localStorage.setItem('accessToken', result.data.accessToken)
 
                 config.headers = {
