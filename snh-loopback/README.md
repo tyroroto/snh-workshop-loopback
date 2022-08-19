@@ -1,6 +1,7 @@
 # Workshop
 
 npm i --save @loopback/authentication @loopback/authentication-jwt
+https://loopback.io/doc/en/lb4/Authentication-tutorial.html
 
 # snh-loopback
 
