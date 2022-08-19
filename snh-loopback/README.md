@@ -1,3 +1,7 @@
+# Workshop
+
+npm i --save @loopback/authentication @loopback/authentication-jwt
+
 # snh-loopback
 
 This application is generated using [LoopBack 4 CLI](https://loopback.io/doc/en/lb4/Command-line-interface.html) with the

@@ -14,7 +14,7 @@ export const getPatient = async (id) => {
 export const searchPatient = async (hn) => {
     const res = await axios.post(
         apiUrl + '/patients/search',
-        { hn }
+        { hn: parseInt(hn) }
     );
     return res.data;
 }

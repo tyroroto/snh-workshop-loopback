@@ -78,9 +78,9 @@ function App() {
                     <Route path='/edit-book/:id' element={<EditBook></EditBook>}></Route>
                     <Route path='/signin' element={<SignIn></SignIn>}></Route>
                     <Route path='/patient-list' element={
-                        <RequireAuth>
+                        // <RequireAuth>
                             <PatientList/>
-                        </RequireAuth>
+                        // </RequireAuth>
                     }></Route>
                     <Route path='/patient/:id' element={<Patient/>}></Route>
 

@@ -7,7 +7,7 @@ import { useContext, useEffect, useState } from 'react';
 import ListBook from './ListBook';
 import { PatientContext } from './Patient';
 
-export default function ModalAddBooking() {
+export default function ModalAddBooking({}) {
     const patientContext = useContext(PatientContext)
     const [open, setOpen] = useState(false);
     useEffect(() => {

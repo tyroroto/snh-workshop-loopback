@@ -10,7 +10,7 @@ const Patient = () => {
     const [patient, setPatient] = useState({})
     const params = useParams();
 
-    useEffect(() => {
+    const loadData = () => {
         searchPatient(params.id).then(result => {
             console.log(result)
             setPatient(result);
@@ -19,13 +19,16 @@ const Patient = () => {
             alert('ไม่พบผู้ป่วย');
             navigator('/patient-list');
         })
+    }
+    useEffect(() => {
+        loadData();
     }, []);
 
     const onSelectBooking = (book) => {
         bookingPatient(patient.hn, book.code).then(
             r => {
                 console.log(r);
-                // reload
+                loadData();
             }
         ).catch( e => {
             console.error('book failed', e)
