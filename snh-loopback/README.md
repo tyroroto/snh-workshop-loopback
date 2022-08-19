@@ -2,7 +2,8 @@
 
 npm i --save @loopback/authentication @loopback/authentication-jwt
 
-https://loopback.io/doc/en/lb4/Authentication-tutorial.html
+- https://loopback.io/doc/en/lb4/Authentication-tutorial.html
+- https://loopback.io/doc/en/lb4/JWT-authentication-extension.html
 
 # snh-loopback
 
